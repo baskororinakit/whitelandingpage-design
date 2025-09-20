@@ -1,0 +1,232 @@
+/* Reset CSS */
+*,html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(0, 0%, 98%);
+}
+
+/* Styling ul li & a */
+ul, li, a {
+  text-decoration: none;
+  list-style: none;
+  color: hsl(0, 0%, 41%);
+  transition: all ease-in .2s;
+}
+
+/* Navbar section */
+.navbar {
+  font-family: 'Poppins', sans-serif;
+  padding: 24px 36px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar h2 {
+  font-family: 'Poppins', sans-serif;
+
+}
+.navbar > ul {
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 1rem;
+  transition: all ease-in .2s;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  padding: 10px 5px;
+  list-style: none;
+  border-radius: 16px;
+  box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.56);
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.56);
+  -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.56);
+}
+
+/* Animate Arrow For Dropdown */
+.dropdown::after {
+  content: url(images/icon-arrow-up.svg);
+  font-size: 0.6em;
+  margin-left: 5px;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+li:hover > .dropdown::after {
+  transform: rotate(180deg);
+}
+
+/* Position relative to parent */
+.navbar ul li {
+  position: relative;
+}
+
+/* In Hover */
+.navbar ul li:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 5px 30px;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  color: #646464;
+}
+
+/* Form Button (Navbar)*/
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-button ul{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-nav button {
+  font-weight: 500;
+  padding: 8px 16px;
+  border: none;
+  color: hsl(0, 0%, 41%);  
+  background-color: white;
+  border: 1.5px solid  hsl(0, 0%, 41%);
+  border-radius: 14px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all ease-in .1s;
+}
+
+.btn-nav button:hover,
+.navbar ul li a:hover {
+  color: #4b4b4b;
+}
+
+/* Hamburger Icon */
+.hamburger-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Media Query For Mobile */
+@media screen and (max-width: 768px) {
+  .navbar > ul {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 80px;
+    width: 390px;
+    height: 200px;
+    background-color: hsl(0, 0%, 98%);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 0 0 8px;
+    transition: right 0.3s ease;
+    /* z-index: 1000; */
+  }
+
+  .navbar > ul.show {
+    display: flex;
+    right: 0; /* Slide in */
+  }
+
+  .hamburger-icon {
+    display: block;
+  }
+  
+  .form-button {
+    display: none;
+  }
+
+  .dropdown-menu {
+    left: 70px;
+  }
+} /* End Media Query For Mobile */
+
+
+/* Section Hero */
+
+.hero {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* height: 90vh; */
+  /* background-color: hsl(0, 0%, 98%); */
+   /* font-family: 'Poppins', sans-serif; */
+   /* background-color: aqua; */
+   /* margin: 66px; */
+   margin-left: 96px;
+   padding-top: 2rem;
+  }
+
+.hero-left h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.hero-left p {
+  margin-top: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: hsl(0, 0%, 41%);
+  /* margin-bottom: 1.6rem; */
+}
+
+
+/* Button On Hero Section (Left) */
+.hero-btn button{
+  font-family: 'Poppins', sans-serif;
+  margin-top: 3rem; 
+  font-size: 16px;
+  background-color: black ;
+  padding: 14px 30px;
+  border-radius: 16px;
+  /* border: none; */
+  color: white;
+  margin-bottom: 4rem;
+  border: 1.5px solid transparent;
+  font-weight: 500;
+  transition: all ease-in .1s;
+  cursor: pointer;
+}
+
+.hero-btn button:hover {
+  color: black;
+  background-color: white;
+  border: 1.5px solid hsl(0, 0%, 41%) ;
+}
+
+
+/* Section hero right */
+.hero-right {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.hero-right img {
+  width: 50%;
+  height: auto;
+}
